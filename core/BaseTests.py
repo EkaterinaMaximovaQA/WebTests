@@ -6,3 +6,4 @@ def browser():
     driver = webdriver.Chrome()
     yield driver
     driver.quit()
+    pass
