@@ -20,4 +20,5 @@ def test_login_without_password(browser):
     assert LoginPage.get_error_text() == EMPTY_PASSWORD_ERROR
 
 
-
+def test_password_without_login(browser):
+    pass #написать метод для ввода пароля

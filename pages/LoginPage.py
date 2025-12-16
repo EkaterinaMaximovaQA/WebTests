@@ -37,4 +37,12 @@ class LoginPageHelper(BasePage):
 
     def enter_login(self,login_text):
         login_field = self.find_element(LoginPageLocators.LOGIN_FIELD)
-        login_field.send_keys(login_text)
+        login_field.clear()
+        login_field.send_keys(login_text) #(send_keys)метод Selenium, который:Имитирует фокус на элементе (как если бы мы кликнули в поле),Имитирует нажатие клавиш на клавиатуре для каждого символа,Последовательно "печатает" переданный текст
+
+
+
+
+
+
+
