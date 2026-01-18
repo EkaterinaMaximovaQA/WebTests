@@ -47,7 +47,8 @@ class LoginPageHelper(BasePage):
     @allure.step('Нажимаем на кнопку "Войти"')
     def click_login(self):
         self.attach_screen_shot()
-        self.find_element(LoginPageLocators.LOGIN_BUTTON).click()
+        self.find_element(LoginPageLocators.LOGIN_BUTTON, clickable=True).click()
+
 
     @allure.step('Получаем текст ошибки')
     def get_error_text(self):
@@ -62,7 +63,7 @@ class LoginPageHelper(BasePage):
 
     @allure.step('Заполняем поле пароля')
     def type_password(self, password):
-        self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys(password)
+        self.find_element(LoginPageLocators.PASSWORD_FIELD).send_keys(password)
         self.attach_screen_shot()
 
     @allure.step('Переходим к восстановлению')
@@ -70,6 +71,8 @@ class LoginPageHelper(BasePage):
         self.attach_screen_shot()
         time.sleep(10)
         self.find_element(LoginPageLocators.RECOVER_BUTTON).click()
+
+
 
 
 
