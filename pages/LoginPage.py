@@ -1,5 +1,5 @@
 import allure
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
 import time
 
@@ -24,7 +24,7 @@ class LoginPageLocators:
 
 #Хелперы = Почтальон, который ходит по этим адресам
 
-class LoginPageHelper(BasePage):
+class LoginPageHelper(BasePageHelper):
     def __init__(self,driver):
         self.driver = driver
         self.check_page()
