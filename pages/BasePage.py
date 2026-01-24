@@ -19,8 +19,10 @@ class BasePageHelper:
     @allure.step('проверяем корректность загрузки страницы')
     def check_page(self):
         self.attach_screen_shot()
-        self.find_element(BasePageLocators.LOGO_BUTTON).click()
-        self.find_element(BasePageLocators.VK_ECO_SYSTEM_BUTTON).click()
+        self.find_element(BasePageLocators.LOGO_BUTTON)
+        self.find_element(BasePageLocators.VK_ECO_SYSTEM_BUTTON)
+
+
 
 
     def find_element(self,locator, time=5, clickable = False):
@@ -53,10 +55,10 @@ class BasePageHelper:
     def click_more_button(self):
         self.find_element(BasePageLocators.MORE_BUTTON).click()
 
-
+    @allure.step('получаем индекс страницы')
     def get_windows_id(self,index):
         return self.driver.window_handles[index]
 
-
+    @allure.step('переходим по полученному id страницы')
     def switch_window(self,window_id):
         self.driver.switch_to.window(window_id)
